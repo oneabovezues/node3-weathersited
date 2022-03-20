@@ -43,7 +43,6 @@ app.get('/weather',(req,res)=>{
             else{
                 utils.forecast({lat,long},({Weather,temperature,Precip} = {},error)=>{
                     res.send({
-                 
                         name,
                         forecast:Weather+".It is currently "+temperature+"C with a " + Precip + "% chance of rain."
                 })
@@ -53,15 +52,6 @@ app.get('/weather',(req,res)=>{
     }
 })
 
-app.get('/products',(req,res)=>{
-    if (req.query.search === undefined){
-        res.send('you must povide a search query')
-    }
-    else{
-    
-    res.send({products:[]})
-    }
-})
 
 app.get('*',(req,res)=>{
     res.render('404',{
