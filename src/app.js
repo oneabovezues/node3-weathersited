@@ -9,6 +9,7 @@ const app = express()
 const pathpublc  = path.join(__dirname,'../public')
 const viewpath = path.join(__dirname,'../templates/views')
 const partialspath = path.join(viewpath,'../partials')
+const port = process.env.PORT || 3000
 
 //setup static objects
 app.use(express.static(pathpublc))
@@ -67,4 +68,4 @@ app.get('/help/*',(req,res)=>{
 })
 
 
-app.listen(3000,()=>console.log('server up'))
+app.listen(port,()=>console.log('server up'))
